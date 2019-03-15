@@ -910,7 +910,7 @@ class RenderCycle {
             } else {
                 displayLink?.frameInterval = 2
             }
-            displayLink?.add(to: .main, forMode: .commonModes)
+        displayLink?.add(to: .main, forMode: .common)
         #elseif os(OSX)
             var dl: CVDisplayLink?
             CVDisplayLinkCreateWithActiveCGDisplays(&dl)
@@ -1835,7 +1835,7 @@ class GraphButton: UIButton {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center
             
-            let attributes: [NSAttributedStringKey: Any] = [
+            let attributes: [NSAttributedString.Key: Any] = [
                 .font           : UIFont.systemFont(ofSize: fontSize, weight: .medium),
                 .paragraphStyle : paragraphStyle
             ]
